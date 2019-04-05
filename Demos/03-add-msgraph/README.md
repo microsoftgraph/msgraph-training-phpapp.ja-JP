@@ -14,43 +14,36 @@ Microsoft アカウントを持っていない場合は、無料のアカウン�
 - [新しい個人用 Microsoft アカウントにサインアップ](https://signup.live.com/signup?wa=wsignin1.0&rpsnv=12&ct=1454618383&rver=6.4.6456.0&wp=MBI_SSL_SHARED&wreply=https://mail.live.com/default.aspx&id=64855&cbcxt=mai&bk=1454618383&uiflavor=web&uaid=b213a65b4fdc484382b6622b3ecaa547&mkt=E-US&lc=1033&lic=1)することができます。
 - [office 365 開発者プログラムにサインアップ](https://developer.microsoft.com/office/dev-program)して、無料の office 365 サブスクリプションを取得することができます。
 
-## <a name="register-a-web-application-with-the-application-registration-portal"></a>web アプリケーションをアプリケーション登録ポータルに登録する
+## <a name="register-a-web-application-with-the-azure-active-directory-admin-center"></a>web アプリケーションを Azure Active Directory 管理センターに登録する
 
-1. ブラウザーを開き、[アプリケーション登録ポータル](https://apps.dev.microsoft.com)に移動します。 **個人アカウント**(別名: Microsoft アカウント) または**職場または学校のアカウント**を使用してログインします。
+1. ブラウザーを開き、 [Azure Active Directory 管理センター](https://aad.portal.azure.com)に移動します。 **個人アカウント**(別名: Microsoft アカウント) または**職場または学校のアカウント**を使用してログインします。
 
-1. ページの上部にある [**アプリの追加**] を選択します。
+1. 左側のナビゲーションで [ **Azure Active Directory** ] を選択し、[**管理**] で [**アプリの登録 (プレビュー)** ] を選択します。
 
-    > **注:** ページに [**アプリの追加**] ボタンが複数表示されている場合は、[収束した**アプリ**] リストに対応するボタンを選択します。
+    ![アプリの登録のスクリーンショット ](/tutorial/images/aad-portal-app-registrations.png)
 
-1. [**アプリケーションの登録**] ページで、[**アプリケーション名**] を [ **PHP Graph のチュートリアル**] に設定し、[**作成**] を選択します。
+1. [**新しい登録**] を選択します。 [**アプリケーションの登録**] ページで、次のように値を設定します。
 
-    ![アプリ登録ポータル web サイトで新しいアプリを作成するスクリーンショット](/tutorial/images/arp-create-app-01.png)
+    - **名前**をに`PHP Graph Tutorial`設定します。
+    - **任意の組織ディレクトリおよび個人の Microsoft アカウントのアカウント**に、**サポートされているアカウントの種類**を設定します。
+    - [**リダイレクト URI**] で、最初のドロップダウンを`Web`に設定し、値`http://localhost:8000/callback`をに設定します。
 
-1. [ **PHP Graph のチュートリアル登録**] ページの [**プロパティ**] セクションで、後で必要になるように**アプリケーション Id**をコピーします。
+    ![[アプリケーションの登録] ページのスクリーンショット](/tutorial/images/aad-register-an-app.png)
 
-    ![新しく作成されたアプリケーションの ID のスクリーンショット](/tutorial/images/arp-create-app-02.png)
+1. [**登録**] を選択します。 **PHP Graph のチュートリアル**ページで、**アプリケーション (クライアント) ID**の値をコピーして保存します。次の手順で必要になります。
 
-1. [**アプリケーションシークレット**] セクションまで下にスクロールします。
+    ![新しいアプリの登録のアプリケーション ID のスクリーンショット](/tutorial/images/aad-application-id.png)
 
-    1. [**新しいパスワードの生成**] を選択します。
-    1. [**新しいパスワードが生成さ**れました] ダイアログで、後で必要になるように、ボックスの内容をコピーします。
+1. [**証明書の &** ] の [**管理**] で選択します。 [**新しいクライアントシークレット**] ボタンを選択します。 [**説明**] に値を入力して、[**有効期限**] のオプションの1つを選択し、[**追加**] を選択します。
 
-        > **重要:** このパスワードは今後表示されないため、ここでコピーしてください。
+    ![[クライアントシークレットの追加] ダイアログのスクリーンショット](/tutorial/images/aad-new-client-secret.png)
 
-    ![新しく作成されたアプリケーションのパスワードのスクリーンショット](/tutorial/images/arp-create-app-03.png)
+1. このページを終了する前に、クライアントシークレット値をコピーします。 次の手順で必要になります。
 
-1. [**プラットフォーム**] セクションまで下にスクロールします。
+    > [!IMPORTANT]
+    > このクライアントシークレットが再度表示されることはありません。そのため、ここでコピーしてください。
 
-    1. [**プラットフォームの追加**] を選択します。
-    1. [**プラットフォームの追加**] ダイアログで、[ **Web**] を選択します。
-
-        ![アプリのプラットフォームを作成するスクリーンショット](/tutorial/images/arp-create-app-04.png)
-
-    1. [ **Web**プラットフォーム] ボックスに、 `http://localhost:8000/callback` **リダイレクト url**の url を入力します。
-
-        ![アプリケーションに新たに追加された Web プラットフォームのスクリーンショット](/tutorial/images/arp-create-app-05.png)
-
-1. ページの一番下までスクロールして、[**保存**] を選択します。
+    ![新しく追加されたクライアントシークレットのスクリーンショット](/tutorial/images/aad-copy-client-secret.png)
 
 ## <a name="configure-the-sample"></a>サンプルを構成する
 
@@ -63,6 +56,7 @@ Microsoft アカウントを持っていない場合は、無料のアカウン�
     ```Shell
     composer install
     ```
+
 1. コマンドラインインターフェイス (CLI) で、次のコマンドを実行してアプリケーションキーを生成します。
 
     ```Shell
