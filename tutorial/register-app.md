@@ -1,41 +1,32 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-<span data-ttu-id="41bba-101">この演習では、アプリケーションレジストリポータル (ARP) を使用して、新しい Azure AD web アプリケーション登録を作成します。</span><span class="sxs-lookup"><span data-stu-id="41bba-101">In this exercise, you will create a new Azure AD web application registration using the Application Registry Portal (ARP).</span></span>
+<span data-ttu-id="2549e-101">この演習では、azure Active Directory 管理センターを使用して、新しい azure AD web アプリケーション登録を作成します。</span><span class="sxs-lookup"><span data-stu-id="2549e-101">In this exercise, you will create a new Azure AD web application registration using the Azure Active Directory admin center.</span></span>
 
-1. <span data-ttu-id="41bba-102">ブラウザーを開き、[アプリケーション登録ポータル](https://apps.dev.microsoft.com)に移動します。</span><span class="sxs-lookup"><span data-stu-id="41bba-102">Open a browser and navigate to the [Application Registration Portal](https://apps.dev.microsoft.com).</span></span> <span data-ttu-id="41bba-103">**個人アカウント**(別名: Microsoft アカウント) または**職場または学校のアカウント**を使用してログインします。</span><span class="sxs-lookup"><span data-stu-id="41bba-103">Login using a **personal account** (aka: Microsoft Account) or **Work or School Account**.</span></span>
+1. <span data-ttu-id="2549e-102">ブラウザーを開き、 [Azure Active Directory 管理センター](https://aad.portal.azure.com)に移動します。</span><span class="sxs-lookup"><span data-stu-id="2549e-102">Open a browser and navigate to the [Azure Active Directory admin center](https://aad.portal.azure.com).</span></span> <span data-ttu-id="2549e-103">**個人アカウント**(別名: Microsoft アカウント) または**職場または学校のアカウント**を使用してログインします。</span><span class="sxs-lookup"><span data-stu-id="2549e-103">Login using a **personal account** (aka: Microsoft Account) or **Work or School Account**.</span></span>
 
-1. <span data-ttu-id="41bba-104">ページの上部にある [**アプリの追加**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="41bba-104">Select **Add an app** at the top of the page.</span></span>
+1. <span data-ttu-id="2549e-104">左側のナビゲーションで [ **Azure Active Directory** ] を選択し、[**管理**] で [**アプリの登録 (プレビュー)** ] を選択します。</span><span class="sxs-lookup"><span data-stu-id="2549e-104">Select **Azure Active Directory** in the left-hand navigation, then select **App registrations (Preview)** under **Manage**.</span></span>
 
-    > [!NOTE]
-    > <span data-ttu-id="41bba-105">ページに [**アプリの追加**] ボタンが複数表示されている場合は、[収束した**アプリ**] リストに対応するボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="41bba-105">If you see more than one **Add an app** button on the page, select the one that corresponds to the **Converged apps** list.</span></span>
+    ![<span data-ttu-id="2549e-105">アプリの登録のスクリーンショット</span><span class="sxs-lookup"><span data-stu-id="2549e-105">A screenshot of the App registrations</span></span> ](./images/aad-portal-app-registrations.png)
 
-1. <span data-ttu-id="41bba-106">[**アプリケーションの登録**] ページで、[**アプリケーション名**] を [ **PHP Graph のチュートリアル**] に設定し、[**作成**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="41bba-106">On the **Register your application** page, set the **Application Name** to **PHP Graph Tutorial** and select **Create**.</span></span>
+1. <span data-ttu-id="2549e-106">[**新しい登録**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="2549e-106">Select **New registration**.</span></span> <span data-ttu-id="2549e-107">[**アプリケーションの登録**] ページで、次のように値を設定します。</span><span class="sxs-lookup"><span data-stu-id="2549e-107">On the **Register an application** page, set the values as follows.</span></span>
 
-    ![アプリ登録ポータル web サイトで新しいアプリを作成するスクリーンショット](./images/arp-create-app-01.png)
+    - <span data-ttu-id="2549e-108">**名前**をに`PHP Graph Tutorial`設定します。</span><span class="sxs-lookup"><span data-stu-id="2549e-108">Set **Name** to `PHP Graph Tutorial`.</span></span>
+    - <span data-ttu-id="2549e-109">**任意の組織ディレクトリおよび個人の Microsoft アカウントのアカウント**に、**サポートされているアカウントの種類**を設定します。</span><span class="sxs-lookup"><span data-stu-id="2549e-109">Set **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts**.</span></span>
+    - <span data-ttu-id="2549e-110">[**リダイレクト URI**] で、最初のドロップダウンを`Web`に設定し、値`http://localhost:8000/callback`をに設定します。</span><span class="sxs-lookup"><span data-stu-id="2549e-110">Under **Redirect URI**, set the first drop-down to `Web` and set the value to `http://localhost:8000/callback`.</span></span>
 
-1. <span data-ttu-id="41bba-108">[ **PHP Graph のチュートリアル登録**] ページの [**プロパティ**] セクションで、後で必要になるように**アプリケーション Id**をコピーします。</span><span class="sxs-lookup"><span data-stu-id="41bba-108">On the **PHP Graph Tutorial Registration** page, under the **Properties** section, copy the **Application Id** as you will need it later.</span></span>
+    ![[アプリケーションの登録] ページのスクリーンショット](./images/aad-register-an-app.png)
 
-    ![新しく作成されたアプリケーションの ID のスクリーンショット](./images/arp-create-app-02.png)
+1. <span data-ttu-id="2549e-112">[**登録**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="2549e-112">Choose **Register**.</span></span> <span data-ttu-id="2549e-113">**PHP Graph のチュートリアル**ページで、**アプリケーション (クライアント) ID**の値をコピーして保存します。次の手順で必要になります。</span><span class="sxs-lookup"><span data-stu-id="2549e-113">On the **PHP Graph Tutorial** page, copy the value of the **Application (client) ID** and save it, you will need it in the next step.</span></span>
 
-1. <span data-ttu-id="41bba-110">[**アプリケーションシークレット**] セクションまで下にスクロールします。</span><span class="sxs-lookup"><span data-stu-id="41bba-110">Scroll down to the **Application Secrets** section.</span></span>
+    ![新しいアプリの登録のアプリケーション ID のスクリーンショット](./images/aad-application-id.png)
 
-    1. <span data-ttu-id="41bba-111">[**新しいパスワードの生成**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="41bba-111">Select **Generate New Password**.</span></span>
-    1. <span data-ttu-id="41bba-112">[**新しいパスワードが生成さ**れました] ダイアログで、後で必要になるように、ボックスの内容をコピーします。</span><span class="sxs-lookup"><span data-stu-id="41bba-112">In the **New password generated** dialog, copy the contents of the box as you will need it later.</span></span>
+1. <span data-ttu-id="2549e-115">[**証明書の &** ] の [**管理**] で選択します。</span><span class="sxs-lookup"><span data-stu-id="2549e-115">Select **Certificates & secrets** under **Manage**.</span></span> <span data-ttu-id="2549e-116">[**新しいクライアントシークレット**] ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="2549e-116">Select the **New client secret** button.</span></span> <span data-ttu-id="2549e-117">[**説明**] に値を入力して、[**有効期限**] のオプションの1つを選択し、[**追加**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="2549e-117">Enter a value in **Description** and select one of the options for **Expires** and choose **Add**.</span></span>
 
-        > [!IMPORTANT]
-        > <span data-ttu-id="41bba-113">このパスワードは今後表示されないため、ここでコピーしてください。</span><span class="sxs-lookup"><span data-stu-id="41bba-113">This password is never shown again, so make sure you copy it now.</span></span>
+    ![[クライアントシークレットの追加] ダイアログのスクリーンショット](./images/aad-new-client-secret.png)
 
-    ![新しく作成されたアプリケーションのパスワードのスクリーンショット](./images/arp-create-app-03.png)
+1. <span data-ttu-id="2549e-119">このページを終了する前に、クライアントシークレット値をコピーします。</span><span class="sxs-lookup"><span data-stu-id="2549e-119">Copy the client secret value before you leave this page.</span></span> <span data-ttu-id="2549e-120">次の手順で必要になります。</span><span class="sxs-lookup"><span data-stu-id="2549e-120">You will need it in the next step.</span></span>
 
-1. <span data-ttu-id="41bba-115">[**プラットフォーム**] セクションまで下にスクロールします。</span><span class="sxs-lookup"><span data-stu-id="41bba-115">Scroll down to the **Platforms** section.</span></span>
+    > [!IMPORTANT]
+    > <span data-ttu-id="2549e-121">このクライアントシークレットが再度表示されることはありません。そのため、ここでコピーしてください。</span><span class="sxs-lookup"><span data-stu-id="2549e-121">This client secret is never shown again, so make sure you copy it now.</span></span>
 
-    1. <span data-ttu-id="41bba-116">[**プラットフォームの追加**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="41bba-116">Select **Add Platform**.</span></span>
-    1. <span data-ttu-id="41bba-117">[**プラットフォームの追加**] ダイアログで、[ **Web**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="41bba-117">In the **Add Platform** dialog, select **Web**.</span></span>
-
-        ![アプリのプラットフォームを作成するスクリーンショット](./images/arp-create-app-04.png)
-
-    1. <span data-ttu-id="41bba-119">[ **Web**プラットフォーム] ボックスに、 `http://localhost:8000/callback` **リダイレクト url**の url を入力します。</span><span class="sxs-lookup"><span data-stu-id="41bba-119">In the **Web** platform box, enter the URL `http://localhost:8000/callback` for the **Redirect URLs**.</span></span>
-
-        ![アプリケーションに新たに追加された Web プラットフォームのスクリーンショット](./images/arp-create-app-05.png)
-
-1. <span data-ttu-id="41bba-121">ページの一番下までスクロールして、[**保存**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="41bba-121">Scroll to the bottom of the page and select **Save**.</span></span>
+    ![新しく追加されたクライアントシークレットのスクリーンショット](./images/aad-copy-client-secret.png)
