@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-この演習では、Microsoft Graph をアプリケーションに組み込みます。 このアプリケーションでは、microsoft graph ライブラリ[](https://github.com/microsoftgraph/msgraph-sdk-php)を使用して microsoft graph への呼び出しを行います。
+この演習では、Microsoft Graph をアプリケーションに組み込みます。 このアプリケーションでは、microsoft graph ライブラリ[](https://github.com/microsoftgraph/msgraph-sdk-php)を使用して microsoft Graph への呼び出しを行います。
 
 ## <a name="get-calendar-events-from-outlook"></a>Outlook から予定表のイベントを取得する
 
