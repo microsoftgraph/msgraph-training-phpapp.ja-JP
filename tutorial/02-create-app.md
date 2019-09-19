@@ -12,7 +12,7 @@ Laravel は、PHP アプリおよび`graph-tutorial`スキャフォールディ�
 php artisan serve
 ```
 
-ブラウザーを開き、`http://localhost:8000` に移動します。 すべてが動作している場合は、既定の Laravel ページが表示されます。 そのページが表示されない場合は、 [Laravel のドキュメント](https://laravel.com/docs/5.6)を確認してください。
+ブラウザーを開き、`http://localhost:8000` に移動します。 すべてが動作している場合は、既定の Laravel ページが表示されます。 そのページが表示されない場合は、 [Laravel のドキュメント](https://laravel.com/docs/6.0)を確認してください。
 
 に進む前に、後で使用する追加のライブラリをインストールします。
 
@@ -114,9 +114,9 @@ composer require league/oauth2-client:dev-master microsoft/microsoft-graph
 </html>
 ```
 
-このコードでは、単純なスタイル設定[](https://fontawesome.com/)のために[ブートストラップ](http://getbootstrap.com/)が追加されています。 また、ナビゲーションバーのあるグローバルレイアウトを定義します。
+このコードでは、単純なスタイル設定のために[ブートストラップ](http://getbootstrap.com/)が追加さ[れてい](https://fontawesome.com/)ます。 また、ナビゲーションバーのあるグローバルレイアウトを定義します。
 
-を開き`./public/css/app.css` 、コンテンツ全体を次のように置き換えます。
+と`./public`いう名前`css`のディレクトリに新しいディレクトリを作成し、という名前`./public/css` `app.css`のディレクトリに新しいファイルを作成します。 次のコードを追加します。
 
 ```css
 body {
