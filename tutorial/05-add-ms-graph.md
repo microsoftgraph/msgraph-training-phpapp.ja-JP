@@ -1,108 +1,84 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-この演習では、Microsoft Graph をアプリケーションに組み込みます。 このアプリケーションでは、microsoft graph ライブラリ[](https://github.com/microsoftgraph/msgraph-sdk-php)を使用して microsoft graph への呼び出しを行います。
+この演習では、Microsoft Graph をアプリケーションに組み込みます。 このアプリケーションでは、microsoft [graph ライブラリを使用して Microsoft](https://github.com/microsoftgraph/msgraph-sdk-php) graph への呼び出しを行います。
 
-## <a name="get-calendar-events-from-outlook"></a>Outlook から予定表のイベントを取得する
+## <a name="get-calendar-events-from-outlook"></a>Outlook からカレンダー イベントを取得する
 
-最初に、[カレンダー] ビューのコントローラーを追加してみましょう。 という名前`./app/Http/Controllers` `CalendarController.php`のフォルダーに新しいファイルを作成し、次のコードを追加します。
+1. という名前`CalendarController.php`の **/app/Http/Controllers**ディレクトリに新しいファイルを作成し、次のコードを追加します。
 
-```php
-<?php
+    ```php
+    <?php
 
-namespace App\Http\Controllers;
+    namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Microsoft\Graph\Graph;
-use Microsoft\Graph\Model;
-use App\TokenStore\TokenCache;
+    use App\Http\Controllers\Controller;
+    use Illuminate\Http\Request;
+    use Microsoft\Graph\Graph;
+    use Microsoft\Graph\Model;
+    use App\TokenStore\TokenCache;
 
-class CalendarController extends Controller
-{
-  public function calendar()
-  {
-    $viewData = $this->loadViewData();
+    class CalendarController extends Controller
+    {
+      public function calendar()
+      {
+        $viewData = $this->loadViewData();
 
-    // Get the access token from the cache
-    $tokenCache = new TokenCache();
-    $accessToken = $tokenCache->getAccessToken();
+        // Get the access token from the cache
+        $tokenCache = new TokenCache();
+        $accessToken = $tokenCache->getAccessToken();
 
-    // Create a Graph client
-    $graph = new Graph();
-    $graph->setAccessToken($accessToken);
+        // Create a Graph client
+        $graph = new Graph();
+        $graph->setAccessToken($accessToken);
 
-    $queryParams = array(
-      '$select' => 'subject,organizer,start,end',
-      '$orderby' => 'createdDateTime DESC'
-    );
+        $queryParams = array(
+          '$select' => 'subject,organizer,start,end',
+          '$orderby' => 'createdDateTime DESC'
+        );
 
-    // Append query parameters to the '/me/events' url
-    $getEventsUrl = '/me/events?'.http_build_query($queryParams);
+        // Append query parameters to the '/me/events' url
+        $getEventsUrl = '/me/events?'.http_build_query($queryParams);
 
-    $events = $graph->createRequest('GET', $getEventsUrl)
-      ->setReturnType(Model\Event::class)
-      ->execute();
+        $events = $graph->createRequest('GET', $getEventsUrl)
+          ->setReturnType(Model\Event::class)
+          ->execute();
 
-    return response()->json($events);
-  }
-}
-```
+        return response()->json($events);
+      }
+    }
+    ```
 
-このコードの内容を検討してください。
+    このコードの実行内容を考えましょう。
 
-- 呼び出し先の URL は`/v1.0/me/events`になります。
-- パラメーター `$select`は、各イベントに対して返されるフィールドを、ビューが実際に使用するものだけに制限します。
-- パラメーター `$orderby`は、生成された日付と時刻で結果を並べ替えます。最新のアイテムが最初に表示されます。
+    - 呼び出される URL は `/v1.0/me/events` です。
+    - パラメーター `$select`は、各イベントに対して返されるフィールドを、ビューが実際に使用するものだけに制限します。
+    - パラメーター `$orderby`は、生成された日付と時刻で結果を並べ替えます。最新のアイテムが最初に表示されます。
 
-の`./routes/web.php`ルートを更新して、この新しいコントローラーにルートを追加する
+1. **/Routes/web.php**のルートを更新して、この新しいコントローラーにルートを追加します。
 
-```php
-Route::get('/calendar', 'CalendarController@calendar');
-```
+    ```php
+    Route::get('/calendar', 'CalendarController@calendar');
+    ```
 
-これで、これをテストできます。 サインインして、ナビゲーションバーの [**予定表**] リンクをクリックします。 すべてが動作する場合は、ユーザーの予定表にイベントの JSON ダンプが表示されます。
+1. サインインして、ナビゲーションバーの [**予定表**] リンクをクリックします。 すべてが正常に機能していれば、ユーザーのカレンダーにイベントの JSON ダンプが表示されます。
 
-## <a name="display-the-results"></a>結果を表示する
+## <a name="display-the-results"></a>結果の表示
 
-これで、ビューを追加して、よりわかりやすい方法で結果を表示することができます。 という名前`./resources/views` `calendar.blade.php`のディレクトリに新しいファイルを作成し、次のコードを追加します。
+結果を表示するとき、よりユーザー フレンドリなビューを追加できます。
 
-```php
-@extends('layout')
+1. という名前`calendar.blade.php`の **./resources/views**ディレクトリに新しいファイルを作成し、次のコードを追加します。
 
-@section('content')
-<h1>Calendar</h1>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Organizer</th>
-      <th scope="col">Subject</th>
-      <th scope="col">Start</th>
-      <th scope="col">End</th>
-    </tr>
-  </thead>
-  <tbody>
-    @isset($events)
-      @foreach($events as $event)
-        <tr>
-          <td>{{ $event->getOrganizer()->getEmailAddress()->getName() }}</td>
-          <td>{{ $event->getSubject() }}</td>
-          <td>{{ \Carbon\Carbon::parse($event->getStart()->getDateTime())->format('n/j/y g:i A') }}</td>
-          <td>{{ \Carbon\Carbon::parse($event->getEnd()->getDateTime())->format('n/j/y g:i A') }}</td>
-        </tr>
-      @endforeach
-    @endif
-  </tbody>
-</table>
-@endsection
-```
+    :::code language="php" source="../demo/graph-tutorial/resources/views/calendar.blade.php" id="CalendarSnippet":::
 
-これにより、イベントのコレクションをループ処理して、テーブル行を1つずつ追加します。 `calendar`の`./app/Http/Controllers/CalendarController.php`アクション`return response()->json($events);`から行を削除し、次のコードに置き換えます。
+    これにより、イベントのコレクションがループされ、各イベントにテーブル行が追加されます。
 
-```php
-$viewData['events'] = $events;
-return view('calendar', $viewData);
-```
+1. /App/Http/Controllers/CalendarController.php の`return response()->json($events);` `calendar`アクションから行を削除 **./app/Http/Controllers/CalendarController.php**し、次のコードに置き換えます。
 
-ページを更新すると、アプリがイベントの表を表示するようになります。
+    ```php
+    $viewData['events'] = $events;
+    return view('calendar', $viewData);
+    ```
 
-![イベントの表のスクリーンショット](./images/add-msgraph-01.png)
+1. ページを更新すると、アプリがイベントの表を表示するようになります。
+
+    ![イベント表のスクリーンショット](./images/add-msgraph-01.png)
