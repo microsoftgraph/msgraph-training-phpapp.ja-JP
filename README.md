@@ -14,8 +14,12 @@
 
 - [完了したプロジェクト](demo)
 
+## <a name="more-samples"></a>その他のサンプル
+
+予定表のシナリオを超える他のグラフの例を探している場合や、このプロジェクトに他の例を投稿する場合は、 [サンプルの分岐](https://github.com/microsoftgraph/msgraph-training-phpapp/tree/samples)を参照してください。
+
 ## <a name="disclaimer"></a>免責事項
 
-**このコードは、特定の目的、市販性、または非侵害に対する暗黙の保証を含め、明示的または黙示的ないかなる種類の保証なし*に提供されます*。**
+**このコードは、特定の目的、市販性、または非侵害に対する暗黙の保証を含め、明示的または黙示的ないかなる種類の保証なし *に提供されます* 。**
 
 このプロジェクトでは、[Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) が採用されています。詳細については、「[Code of Conduct の FAQ](https://opensource.microsoft.com/codeofconduct/faq/)」を参照してください。また、その他の質問やコメントがあれば、[opencode@microsoft.com](mailto:opencode@microsoft.com) までお問い合わせください。

@@ -1,3 +1,3 @@
 # <a name="build-php-apps-with-microsoft-graph"></a>Microsoft Graph を使って PHP アプリを構築する
 
-このコンテンツはに[https://docs.microsoft.com/graph/training/php-tutorial](https://docs.microsoft.com/graph/training/php-tutorial)移動されました。 ブックマークを更新してください。
+このコンテンツはに移動されました [https://docs.microsoft.com/graph/tutorials/php](https://docs.microsoft.com/graph/tutorials/php) 。 ブックマークを更新してください。

@@ -20,8 +20,14 @@
 
 に進む前に、後で使用する追加のパッケージをインストールします。
 
-- [oauth2-](https://github.com/thephpleague/oauth2-client)サインインおよび OAuth トークンフローを処理するためのクライアントです。
+- [oauth2-](https://github.com/thephpleague/oauth2-client) サインインおよび OAuth トークンフローを処理するためのクライアントです。
 - microsoft graph に電話をかけるための[グラフ](https://github.com/microsoftgraph/msgraph-sdk-php)です。
+
+1. の既存のバージョンを削除するには、次のコマンドを実行し `guzzlehttp/guzzle` ます。 Laravel によってインストールされたバージョンは、Microsoft Graph PHP SDK で必要なバージョンと競合しています。
+
+    ```Shell
+    composer remove guzzlehttp/guzzle
+    ```
 
 1. CLI で次のコマンドを実行します。
 
@@ -31,29 +37,29 @@
 
 ## <a name="design-the-app"></a>アプリを設計する
 
-1. という名前`layout.blade.php`の **./resources/views**ディレクトリに新しいファイルを作成し、次のコードを追加します。
+1. という名前の **./resources/views** ディレクトリに新しいファイルを作成 `layout.blade.php` し、次のコードを追加します。
 
     :::code language="php" source="../demo/graph-tutorial/resources/views/layout.blade.php" id="LayoutSnippet":::
 
     このコードはシンプルなスタイルのために [Bootstrap](http://getbootstrap.com/) を追加し、シンプルなアイコンのために [Font Awesome](https://fontawesome.com/) を追加します。 また、ナビゲーションバーのあるグローバルレイアウトを定義します。
 
-1. と`./public`いう名前`css`のディレクトリに新しいディレクトリを作成し、という名前`./public/css` `app.css`のディレクトリに新しいファイルを作成します。 次のコードを追加します。
+1. という名前のディレクトリに新しいディレクトリを作成 `./public` `css` し、という名前のディレクトリに新しいファイルを作成し `./public/css` `app.css` ます。 次のコードを追加します。
 
     :::code language="css" source="../demo/graph-tutorial/public/css/app.css":::
 
-1. `./resources/views/welcome.blade.php`ファイルを開き、その内容を次のように置き換えます。
+1. ファイルを開き、 `./resources/views/welcome.blade.php` その内容を次のように置き換えます。
 
     :::code language="php" source="../demo/graph-tutorial/resources/views/welcome.blade.php" id="WelcomeSnippet":::
 
-1. 次の関数`Controller`をクラスに追加して、/app/Http/Controllers/Controller.php の基本クラスを更新します **。**
+1. `Controller`次の関数をクラスに追加して、/app/Http/Controllers/Controller.php の基本クラスを更新します **。**
 
     :::code language="php" source="../demo/graph-tutorial/app/Http/Controllers/Controller.php" id="LoadViewDataSnippet":::
 
-1. という名前`./app/Http/Controllers` `HomeController.php`のディレクトリに新しいファイルを作成し、次のコードを追加します。
+1. という名前のディレクトリに新しいファイルを作成 `./app/Http/Controllers` `HomeController.php` し、次のコードを追加します。
 
     :::code language="php" source="../demo/graph-tutorial/app/Http/Controllers/HomeController.php":::
 
-1. の`./routes/web.php`ルートを更新して、新しいコントローラーを使用します。 このファイルの内容全体を次のように置き換えます。
+1. のルートを更新し `./routes/web.php` て、新しいコントローラーを使用します。 このファイルの内容全体を次のように置き換えます。
 
     ```php
     <?php
