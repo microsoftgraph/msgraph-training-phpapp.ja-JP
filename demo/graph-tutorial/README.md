@@ -1,79 +1,62 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
 ## <a name="about-laravel"></a>Laravel について
 
-Laravel は、豊かで洗練された構文を使用した web アプリケーションフレームワークです。 開発は、本当に実現するために、楽しくてクリエイティブな経験を持つ必要があると考えています。 Laravel は、次のような多くの web プロジェクトで使用されている一般的なタスクを容易にすることで、開発から困難を出します。
+Laravel は、表現力と洗練された構文を持つ Web アプリケーション フレームワークです。 真に実現するには、開発は楽しくクリエイティブなエクスペリエンスである必要があります。 Laravel は、次のような多くの Web プロジェクトで使用される一般的なタスクを簡単にすることで、開発の問題を軽減します。
 
-- [シンプルで高速なルーティングエンジン](https://laravel.com/docs/routing)。
+- [シンプルで高速なルーティング エンジン](https://laravel.com/docs/routing)。
 - [強力な依存関係挿入コンテナー](https://laravel.com/docs/container)。
-- [セッション](https://laravel.com/docs/session)および[キャッシュ](https://laravel.com/docs/cache)ストレージの複数のバックエンド。
-- 豊かで直観的な[データベース ORM](https://laravel.com/docs/eloquent)。
-- データベースに依存しない[スキーマの移行](https://laravel.com/docs/migrations)。
-- [堅牢なバックグラウンドジョブ処理](https://laravel.com/docs/queues)。
-- [リアルタイムのイベントブロードキャスト](https://laravel.com/docs/broadcasting)。
+- セッションおよびキャッシュ ストレージ[](https://laravel.com/docs/session)の複数[のバック](https://laravel.com/docs/cache)エンド。
+- 表現力と直感的な [データベース ORM](https://laravel.com/docs/eloquent)。
+- データベースに依存しない [スキーマの移行](https://laravel.com/docs/migrations)。
+- [堅牢なバックグラウンド ジョブ処理](https://laravel.com/docs/queues)。
+- [リアルタイムイベントのブロードキャスト](https://laravel.com/docs/broadcasting)。
 
-Laravel にはアクセス可能で、強力で、大規模で堅牢なアプリケーションに必要なツールが用意されています。
+Laravel はアクセスしやすく強力で、大規模で堅牢なアプリケーションに必要なツールを提供します。
 
-## <a name="learning-laravel"></a>ラーニング Laravel
+## <a name="learning-laravel"></a>Laravel の学習
 
-Laravel には、すべてのモダン web アプリケーションフレームワークの最も広範囲で完全な[ドキュメント](https://laravel.com/docs)とビデオチュートリアルライブラリが用意されており、このフレームワークを使い始めるのが容易になります。
+Laravel には、すべての最新の[](https://laravel.com/docs)Web アプリケーション フレームワークに関する最も広範で徹底的なドキュメントとビデオ チュートリアル ライブラリが用意されています。このフレームワークを使い始めるのは簡単です。
 
-読みたくない場合は、Laracasts が役に[Laracasts](https://laracasts.com)ことがあります。 Laracasts には、Laravel、モダン PHP、単体テスト、JavaScript など、さまざまなトピックに関する1500ビデオチュートリアルが含まれています。 包括的なビデオライブラリを利用して、スキルを向上させます。
+読み気ない場合は [、Laracasts が](https://laracasts.com) 役立ちます。 Laracasts には、Laravel、最新の PHP、単体テスト、JavaScript など、さまざまなトピックに関する 1500 を超えるビデオ チュートリアルが含まれています。 包括的なビデオ ライブラリを掘り下げ、スキルを向上させます。
 
-## <a name="laravel-sponsors"></a>Laravel スポンサー
+## <a name="laravel-sponsors"></a>Laravel Sponsors
 
-財政的 Laravel の開発については、次のスポンサーを拡張したいと考えています。 スポンサーになることに関心がある場合は、Laravel の [[測定] ページ](https://patreon.com/taylorotwell)にアクセスしてください。
+Laravel 開発に資金を提供するために、次のスポンサーに感謝の思いを表します。 スポンサーになることに興味がある場合は、Laravel [Patreon ページにアクセスしてください](https://patreon.com/taylorotwell)。
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Co を締めます。](https://tighten.co)**
+### <a name="premium-partners"></a>プレミアム パートナー
+
+- **[ベヒド](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
 - **[Kirschbaum 開発グループ](https://kirschbaumdevelopment.com)**
-- **[64ロボット](https://64robots.com)**
-- **[Cubet Labs](https://cubettech.com)**
-- **[サイバー-アヒル](https://cyber-duck.co.uk)**
-- **[英国のソフトウェア開発](https://www.britishsoftware.co)**
-- **[Webdock、Fast VPS ホスティング](https://www.webdock.io/en)**
+- **[64 ロボット](https://64robots.com)**
+- **[Cubet Cube Labs](https://cubettech.com)**
+- **[サイバー ダッキング](https://cyber-duck.co.uk)**
+- **[多](https://www.many.co.uk)**
+- **[Webdock、Fast VPS Hosting](https://www.webdock.io/en)**
 - **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [ランタイムコンバータ](http://runtimeconverter.com/)
-- [Webl' Agた](https://weblagence.com/)
-- [請求書 Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast コレクティブ](https://steadfastcollective.com/)
-- [ロボット Inc になっています。](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [ハイパーホスト](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [ケティング.ブログ](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
+- **[Curotec](https://www.curotec.com/)**
+- **[OP。GG](https://op.gg)**
 
 ## <a name="contributing"></a>投稿
 
-Laravel framework に貢献することを検討していただき、ありがとうございます。 投稿ガイドについては、 [Laravel のドキュメント](https://laravel.com/docs/contributions)を参照してください。
+Laravel フレームワークへの貢献を検討してありがとうございます。 投稿ガイドは [、Laravel のドキュメントに含まれています](https://laravel.com/docs/contributions)。
 
 ## <a name="code-of-conduct"></a>Code of Conduct
 
-Laravel コミュニティが全員に対して歓迎されることを確認するために、[倫理](https://laravel.com/docs/contributions#code-of-conduct)規定を確認して遵守してください。
+Laravel コミュニティがすべてのユーザーを歓迎するために、実施基準を確認し、 [その基準に必ずお付きください](https://laravel.com/docs/contributions#code-of-conduct)。
 
 ## <a name="security-vulnerabilities"></a>セキュリティの脆弱性
 
-Laravel 内でセキュリティの脆弱性を発見した場合は、 [taylor@laravel.com](mailto:taylor@laravel.com)経由で Taylor Otwell に電子メールを送信してください。 すべてのセキュリティの脆弱性が速やかに解決されます。
+Laravel 内でセキュリティの脆弱性が見つかった場合は、電子メールで Taylor@laravel.com を介して、Taylor@laravel.com に [送信してください](mailto:taylor@laravel.com)。 セキュリティの脆弱性はすべて、迅速に対処されます。
 
 ## <a name="license"></a>ライセンス
 
-Laravel フレームワークは、 [MIT ライセンス](https://opensource.org/licenses/MIT)のもとにライセンスされたオープンソースソフトウェアです。
+Laravel フレームワークは、オープン ソースのソフトウェアで、MIT ライセンスの下で [ライセンスされています](https://opensource.org/licenses/MIT)。
